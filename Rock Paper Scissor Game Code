@@ -1,0 +1,24 @@
+import random
+
+def play():
+    print("Welcome to Rock, Paper, Scissors!")
+    print("Enter your choice: rock, paper, or scissors")
+
+    user = input("Your choice: ").lower()
+    while user not in ["rock", "paper", "scissors"]:
+        user = input("Invalid choice. Please enter rock, paper, or scissors: ").lower()
+
+    computer = random.choice(["rock", "paper", "scissors"])
+    print(f"Computer chose: {computer}")
+
+    if user == computer:
+        print("It's a tie!")
+    elif (user == "rock" and computer == "scissors") or \
+         (user == "paper" and computer == "rock") or \
+         (user == "scissors" and computer == "paper"):
+        print("You win! 🎉")
+    else:
+        print("You lose! 😢")
+
+if __name__ == "__main__":
+    play()
